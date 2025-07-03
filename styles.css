@@ -79,6 +79,7 @@ ul li a:hover {
   width: 100%;
   transition: 300ms ease-in-out;
   will-change: transform;
+  user-select: none;
 }
 
 .project-desc {
@@ -104,6 +105,7 @@ ul li a:hover {
   will-change: transform;
   perspective: 1000px; /* Added for 3D effect */
   pointer-events: none;
+  user-select: none;
 }
 
 .project:hover > .project-desc {
@@ -138,7 +140,8 @@ ul li a:hover {
   border-radius: 3px;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
   transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
-  transform-style: preserve-3d; /* Maintain 3D transforms */
+  transform-style: preserve-3d;
+  user-select: none;
 }
 
 .github-btn-container {
@@ -252,9 +255,44 @@ footer p {
   scale: 1.025;
 }
 
+.project.transform > .project-desc {
+  transform: translateY(65px) translateX(0);
+  opacity: 1;
+}
+
+.project.transform {
+  background-color: #dedede;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+}
+
+.project.transform > .project-img-container > .project-img {
+  transform: translateY(-40px) rotateY(25deg) translateX(-40px) scale(0.9); /* Added 3D rotation + shift */
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.project.transform > .github-btn-container {
+  opacity: 0.6;
+  background-color: #777;
+}
+
+.project.transform > .share-btn-container {
+  opacity: 0.6;
+  background-color: #777;
+}
+
 @media (min-width: 50px) {
   .projects {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .project-img {
+    width: 320px;
+  }
+}
+
+@media (min-width: 480px) {
+  .project-img {
+    width: 410px;
   }
 }
 
