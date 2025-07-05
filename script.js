@@ -29,13 +29,14 @@ if (isTouchDevice()) {
 
   const projectsArray = Array.from(projects);
 
-  const handleProjectInView = (e) => {
+  const handleProjectInView = () => {
     projectsArray.forEach((p) => {
       const rect = p.getBoundingClientRect();
       const top = rect.top;
+      const bottom = rect.bottom;
       const windowHeight = window.innerHeight;
 
-      if (top < windowHeight / 2 && top > -10) {
+      if (top < windowHeight / 2 && bottom > windowHeight / 2) {
         p.classList.add("transform");
       } else {
         p.classList.remove("transform");
