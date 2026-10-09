@@ -1,6 +1,21 @@
 const githubBtns = document.querySelectorAll(".github-btn");
+const expandImgBtns = document.querySelectorAll(".img-expand-btn");
 
 const ghBtnsArray = Array.from(githubBtns);
+const expandImgBtnsArray = Array.from(expandImgBtns);
+
+expandImgBtnsArray.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const url = e.target?.dataset?.url || "";
+
+    if (url) {
+      window.location.href = url;
+    }
+  });
+});
 
 ghBtnsArray.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -69,7 +84,7 @@ const enableShare = (div) => {
         .catch((err) => console.error("Share failed:", err));
     } else {
       const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-        url
+        url,
       )}`;
       window.open(shareUrl, "_blank", "width=600,height=400");
     }

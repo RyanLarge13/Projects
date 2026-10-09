@@ -31,11 +31,13 @@ a:hover {
   outline: none;
 }
 
+/* ---------------- NAVIGATION ---------------- */
+
 nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 10px;
+  padding: 18px 25px;
 }
 
 ul {
@@ -43,21 +45,43 @@ ul {
   justify-content: center;
   align-items: center;
   list-style-type: none;
-  column-gap: 15px;
-  margin-right: 20px;
+  gap: 22px;
+  margin-right: 10px;
 }
 
 ul li a {
+  position: relative;
   text-decoration: none;
-  color: #000000;
+  color: #555555;
   font-size: 0.75em;
-  padding: 5px 5px;
-  transition: 250ms ease-in-out;
+  font-weight: 500;
+  padding: 6px 0;
+  transition: color 200ms ease-in-out;
+}
+
+ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #777777;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 200ms ease-in-out;
 }
 
 ul li a:hover {
-  color: #777777;
+  color: #111111;
 }
+
+ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------------- INTRO ---------------- */
 
 .intro {
   text-align: center;
@@ -69,16 +93,19 @@ ul li a:hover {
   padding: 0 30px;
 }
 
+/* ---------------- PROJECT GRID ---------------- */
+
 .projects {
   display: grid;
+  grid-template-columns: 1fr;
   padding: 35px;
-  gap: 35px;
+  gap: 45px;
   place-items: center;
 }
 
 .project {
   cursor: pointer;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   background-color: #eeeeee;
   border-radius: 5px;
   display: flex;
@@ -86,12 +113,15 @@ ul li a:hover {
   align-items: center;
   flex-direction: column;
   position: relative;
-  max-width: 500px;
+  max-width: 540px;
   width: 100%;
   transition: 300ms ease-in-out;
   will-change: transform;
   user-select: none;
+  overflow: hidden;
 }
+
+/* ---------------- PROJECT DESCRIPTION ---------------- */
 
 .project-desc {
   color: #777777;
@@ -100,11 +130,20 @@ ul li a:hover {
   position: absolute;
   left: 50%;
   top: 50%;
+  width: calc(100% - 50px);
+  text-align: center;
   transform: translate(-50%, 0);
-  transition: 300ms ease-in-out;
+  transition: 400ms ease-in-out;
   will-change: transform;
   opacity: 0;
 }
+
+.project:hover > .project-desc {
+  transform: translate(-30%, 100px);
+  opacity: 1;
+}
+
+/* ---------------- PROJECT IMAGE ---------------- */
 
 .project-img-container {
   position: absolute;
@@ -114,52 +153,59 @@ ul li a:hover {
   align-items: center;
   transition: transform 300ms ease-in-out;
   will-change: transform;
-  perspective: 1000px; /* Added for 3D effect */
+  perspective: 1000px;
   pointer-events: none;
   user-select: none;
 }
 
-.project:hover > .project-desc {
-  transform: translateY(65px) translateX(0);
-  opacity: 1;
-}
-
-.project:hover {
-  background-color: #dedede;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
-}
-
-.project:hover > .project-img-container > .project-img {
-  transform: translateY(-40px) rotateY(25deg) translateX(-40px) scale(0.9); /* Added 3D rotation + shift */
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
-
-.project:hover > .github-btn-container {
-  opacity: 0.6;
-  background-color: #777;
-}
-
-.project:hover > .share-btn-container {
-  opacity: 0.6;
-  background-color: #777;
-}
-
 .project-img {
   transform: translateY(-40px);
-  width: 410px;
-  aspect-ratio: 16/8;
+
+  /*
+    Relative sizing keeps the image inside the card at every
+    grid width while allowing it to grow with larger cards.
+  */
+  width: 88%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+
   border-radius: 3px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
-  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+
+  transition:
+    transform 300ms ease-in-out,
+    box-shadow 300ms ease-in-out;
+
   transform-style: preserve-3d;
   user-select: none;
 }
 
-.github-btn-container {
+/* ---------------- PROJECT HOVER ---------------- */
+
+.project:hover {
+  background-color: #dedede;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.2),
+    0 2px 4px -2px rgb(0 0 0 / 0.2);
+}
+
+.project:hover > .project-img-container > .project-img {
+  transform: translateY(-40px) rotateY(25deg) translateX(-40px) scale(0.92);
+
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* ---------------- PROJECT BUTTONS ---------------- */
+
+.github-btn-container,
+.share-btn-container,
+.img-expand-btn-container {
   opacity: 0;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 8px;
   width: 35px;
   height: 35px;
   display: flex;
@@ -170,40 +216,44 @@ ul li a:hover {
   will-change: transform;
 }
 
-.github-btn-container:hover {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
-  background-color: #ffffff !important;
-}
-
-.github-btn {
-  width: 25px;
-  height: 25px;
+.github-btn-container {
+  right: 8px;
 }
 
 .share-btn-container {
-  opacity: 0;
-  position: absolute;
-  top: 5px;
-  right: 45px;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 300ms ease-in-out;
-  border-radius: 5px;
-  will-change: transform;
+  right: 48px;
 }
 
-.share-btn-container:hover {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+.img-expand-btn-container {
+  right: 88px;
+}
+
+.project:hover > .github-btn-container,
+.project:hover > .share-btn-container,
+.project:hover > .img-expand-btn-container {
+  opacity: 0.6;
+  background-color: #777777;
+}
+
+.github-btn-container:hover,
+.share-btn-container:hover,
+.img-expand-btn-container:hover {
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.2),
+    0 2px 4px -2px rgb(0 0 0 / 0.2);
+
   background-color: #ffffff !important;
+  opacity: 1 !important;
 }
 
-.share-btn {
+.github-btn,
+.share-btn,
+.img-expand-btn {
   width: 25px;
   height: 25px;
 }
+
+/* ---------------- PROJECT INFO ---------------- */
 
 .project-info {
   display: flex;
@@ -220,6 +270,8 @@ ul li a:hover {
   font-weight: 600;
 }
 
+/* ---------------- EXTRO ---------------- */
+
 .extro {
   text-align: center;
   max-width: 700px;
@@ -229,6 +281,8 @@ ul li a:hover {
   line-height: 1.4em;
   padding: 0 30px;
 }
+
+/* ---------------- FOOTER ---------------- */
 
 footer {
   padding: 25px;
@@ -243,18 +297,26 @@ footer p {
   color: #777777;
 }
 
+/* ---------------- CONTACT BUTTON ---------------- */
+
 .get-in-touch-button {
   color: #555555;
   font-size: 0.9em;
   border: none;
   outline: none;
   background-color: #ffffff;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.2),
+    0 2px 4px -2px rgb(0 0 0 / 0.2);
+
   padding: 14px 20px;
   border-radius: 3px;
+
   position: fixed;
   bottom: 20px;
   left: 50%;
+
   transform: translateX(-50%);
   transition: 300ms ease-in-out;
   will-change: transform;
@@ -266,65 +328,50 @@ footer p {
   scale: 1.025;
 }
 
+/* ---------------- TOUCH / JS TRANSFORM STATE ---------------- */
+
 .project.transform > .project-desc {
-  transform: translateY(65px) translateX(0);
+  transform: translate(-50%, 65px);
   opacity: 1;
 }
 
 .project.transform {
   background-color: #dedede;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.2),
+    0 2px 4px -2px rgb(0 0 0 / 0.2);
 }
 
 .project.transform > .project-img-container > .project-img {
-  transform: translateY(-40px) rotateY(25deg) translateX(-40px) scale(0.9); /* Added 3D rotation + shift */
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  transform: translateY(-40px) rotateY(25deg) translateX(-40px) scale(0.92);
+
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-.project.transform > .github-btn-container {
+.project.transform > .github-btn-container,
+.project.transform > .share-btn-container,
+.project.transform > .img-expand-btn-container {
   opacity: 0.6;
-  background-color: #777;
+  background-color: #777777;
 }
 
-.project.transform > .share-btn-container {
-  opacity: 0.6;
-  background-color: #777;
-}
-
-@media (min-width: 50px) {
-  .projects {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .project-img {
-    width: 320px;
-  }
-}
-
-@media (min-width: 480px) {
-  .project-img {
-    width: 410px;
-  }
-}
+/* ---------------- RESPONSIVE GRID ---------------- */
 
 @media (min-width: 1050px) {
   .projects {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
 
-@media (min-width: 1150px) {
   .project {
-    max-width: unset;
+    max-width: none;
   }
 }
 
 @media (min-width: 1500px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .project {
-    max-width: unset;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
