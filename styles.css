@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -118,7 +119,6 @@ ul li a:hover::after {
   transition: 300ms ease-in-out;
   will-change: transform;
   user-select: none;
-  overflow: hidden;
 }
 
 /* ---------------- PROJECT DESCRIPTION ---------------- */
@@ -161,15 +161,11 @@ ul li a:hover::after {
 .project-img {
   transform: translateY(-40px);
 
-  /*
-    Relative sizing keeps the image inside the card at every
-    grid width while allowing it to grow with larger cards.
-  */
   width: 88%;
   max-width: 500px;
   height: auto;
   aspect-ratio: 16 / 8;
-  object-fit: cover;
+  /* object-fit: cover; */
 
   border-radius: 3px;
 
@@ -191,7 +187,8 @@ ul li a:hover::after {
 }
 
 .project:hover > .project-img-container > .project-img {
-  transform: translateY(-40px) rotateY(25deg) translateX(-40px) scale(0.92);
+  transform: translateY(-45px) rotateY(25deg) translateX(-40px) scale(0.92)
+    scale(1.1);
 
   box-shadow:
     0 10px 15px -3px rgb(0 0 0 / 0.1),
