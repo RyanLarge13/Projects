@@ -3,37 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore software projects, engineering experiments, and custom development services by Ryan Large." />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
     <script type="module" src="./script.js"></script>
     <title>Ryan Large | Building Exceptional Software</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="https://ryans-blog-roan.vercel.app/">Blog</a>
-          </li>
-          <li>
-            <a href="https://ryanlarge13.github.io/Projects/services/index.html"
-              >Build</a
-            >
-          </li>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="site-brand" href="#top" aria-label="Ryan Large, back to top">RYAN LARGE<span>.</span></a>
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="https://ryans-blog-roan.vercel.app/">Journal</a></li>
+          <li><a href="./services/index.html">Services</a></li>
+          <li><a href="mailto:ryanlarge@ryanlarge.dev">Contact <span aria-hidden="true">↗</span></a></li>
         </ul>
       </nav>
     </header>
     <div class="large-img-display"></div>
-    <p class="intro">
-      I’m Ryan Large, a software developer passionate about crafting clean,
-      efficient, and user-focused applications. From web platforms to mobile
-      experiences, I bring ideas to life through thoughtful design and robust
-      engineering.
-    </p>
+    <main id="top">
+      <section class="portfolio-hero" aria-labelledby="hero-heading">
+        <div class="eyebrow"><span class="eyebrow-line"></span> SOFTWARE DEVELOPMENT & DESIGN</div>
+        <h1 id="hero-heading">Building things<br /><span>with intention.</span></h1>
+        <p class="intro">
+          I’m Ryan Large, a software developer crafting thoughtful digital experiences—from
+          useful applications to ambitious experiments. I care about the details,
+          the people using what I build, and the problems worth solving.
+        </p>
+        <div class="hero-actions">
+          <a class="action-link action-link-primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="action-link" href="./services/index.html">Work with me <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-bottom"><span>SELECTED PROJECTS & EXPERIMENTS</span><span>SCROLL TO EXPLORE ↓</span></div>
+      </section>
+      <section class="work-section" id="work" aria-labelledby="work-heading">
+        <div class="section-heading">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> THE WORK</div>
+          <h2 id="work-heading">Projects <span>& explorations.</span></h2></div>
+          <p>A collection of applications, interfaces, and experiments—built to solve problems, learn something new, or simply explore an idea.</p>
+        </div>
     <section class="projects">
       <a
         href="https://ryanlarge13.github.io/Tomato/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         class="project"
       >
         <div class="github-btn-container">
@@ -79,7 +92,7 @@
 
       <a
         href="https://ryanlarge13.github.io/Tetris-JS/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         class="project"
       >
         <div class="github-btn-container">
@@ -125,7 +138,7 @@
 
       <a
         href="https://ryanlarge13.github.io/Markup-Editor/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         class="project"
       >
         <div class="github-btn-container">
@@ -171,7 +184,7 @@
 
       <a
         href="https://github.com/RyanLarge13/Native-Weather"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         class="project"
       >
         <div class="github-btn-container">
@@ -217,7 +230,7 @@
 
       <a
         href="https://template-1-gamma-one.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         class="project"
       >
         <div class="github-btn-container">
@@ -261,7 +274,7 @@
         </div>
       </a>
 
-      <a href="https://snapcraft.io/web-notes" target="_blank" class="project">
+      <a href="https://snapcraft.io/web-notes" target="_blank" rel="noopener noreferrer" class="project">
         <div class="github-btn-container">
           <img
             src="./assets/gh.png"
@@ -305,7 +318,7 @@
       <a
         class="project"
         href="https://memories-omega-gilt.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -350,7 +363,7 @@
       <a
         class="project"
         href="https://shellys-pets.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -391,7 +404,7 @@
       </a>
       <a
         href="https://expo.dev/artifacts/eas/ueF9WuMNQdwdRxCQKQC44W.apk"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         class="project"
       >
         <div class="github-btn-container">
@@ -437,7 +450,7 @@
       <a
         class="project"
         href="https://marks-paintings.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -479,7 +492,7 @@
       <a
         class="project"
         href="https://ryans-blog-roan.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -517,7 +530,7 @@
       <a
         class="project"
         href="https://snippets-rho.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -557,7 +570,7 @@
         </div>
       </a>
 
-      <a class="project" href="https://calng.app/" target="_blank">
+      <a class="project" href="https://calng.app/" target="_blank" rel="noopener noreferrer">
         <div class="github-btn-container">
           <img
             src="./assets/gh.png"
@@ -599,7 +612,7 @@
       <a
         class="project"
         href="https://github.com/RyanLarge13/Calendar-Next-Gen/backend"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -642,7 +655,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/Bootcamp-Template/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -684,7 +697,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/Case-Study-Weather-App-React/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -726,7 +739,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/Let-Me-Guess/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -768,7 +781,7 @@
       <a
         class="project"
         href="https://react-template-landing-page-coral.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -810,7 +823,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/Login-Validation/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -849,7 +862,7 @@
           <p class="project-github">Static Website Mockup</p>
         </div>
       </a>
-      <a class="project" href="http://mk11-react.vercel.app/" target="_blank">
+      <a class="project" href="https://mk11-react.vercel.app/" target="_blank" rel="noopener noreferrer">
         <div class="github-btn-container">
           <img
             src="./assets/gh.png"
@@ -890,7 +903,7 @@
       <a
         class="project"
         href="https://ryans-flix.herokuapp.com/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -932,7 +945,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/Physics-Sym"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -974,7 +987,7 @@
       <a
         class="project"
         href="https://ai-prompts-alpha.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1016,7 +1029,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/VanillaJs-Portfolio/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1058,7 +1071,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/Altos-Odyssey-Clone/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1100,7 +1113,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/Simple-Draw/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1142,7 +1155,7 @@
       <a
         class="project"
         href="https://soap-works-production.up.railway.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1184,7 +1197,7 @@
       <a
         class="project"
         href="https://react-tailwind-modern-ui.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1226,7 +1239,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/FiveFurnace-Beta/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1268,7 +1281,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/Text-Editor-JS/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1310,7 +1323,7 @@
       <a
         class="project"
         href="https://ryanlarge13.github.io/Vanilla-Todo/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1349,7 +1362,7 @@
           <p class="project-github">Static Web App</p>
         </div>
       </a>
-      <a class="project" href="https://troy-large.vercel.app/" target="_blank">
+      <a class="project" href="https://troy-large.vercel.app/" target="_blank" rel="noopener noreferrer">
         <div class="github-btn-container">
           <img
             src="./assets/gh.png"
@@ -1387,7 +1400,7 @@
           <p class="project-github">SSR E-commerce</p>
         </div>
       </a>
-      <a class="project" href="https://txt-me.vercel.app/" target="_blank">
+      <a class="project" href="https://txt-me.vercel.app/" target="_blank" rel="noopener noreferrer">
         <div class="github-btn-container">
           <img
             src="./assets/gh.png"
@@ -1426,7 +1439,7 @@
         </div>
       </a>
 
-      <a class="project" href="https://txt-me.vercel.app/" target="_blank">
+      <a class="project" href="https://txt-me.vercel.app/" target="_blank" rel="noopener noreferrer">
         <div class="github-btn-container">
           <img
             src="./assets/gh.png"
@@ -1468,7 +1481,7 @@
       <a
         class="project"
         href="https://workout-blog.vercel.app/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         <div class="github-btn-container">
           <img
@@ -1507,7 +1520,7 @@
           <p class="project-github">SPA Blog</p>
         </div>
       </a>
-      <a class="project" href="http://zero-omega.vercel.app/" target="_blank">
+      <a class="project" href="https://zero-omega.vercel.app/" target="_blank" rel="noopener noreferrer">
         <div class="github-btn-container">
           <img
             src="./assets/gh.png"
@@ -1544,18 +1557,37 @@
           <p class="project-github">Static E-Commerce Website</p>
         </div>
       </a>
-    </section>
-    <p class="extro">
-      This portfolio is a glimpse into the projects I’ve built and the problems
-      I’ve solved. I’m always looking for new challenges and collaborations—feel
-      free to reach out if you’d like to work together.
-    </p>
-    <a class="get-in-touch-button" href="mailto:ryanlarge@ryanlarge.dev"
-      >Get In Touch</a
-    >
-    <footer>
-      <p>© | 2025</p>
-      <p>Ryan Hudson Large</p>
+      </section>
+      </section>
+      <section class="next-steps" aria-labelledby="next-heading">
+        <div class="eyebrow"><span class="eyebrow-line"></span> BEYOND THE PROJECTS</div>
+        <h2 id="next-heading">The work is only <span>part of the story.</span></h2>
+        <div class="pathways">
+          <a class="pathway" href="./services/index.html">
+            <span class="pathway-number">01 / SERVICES</span>
+            <h3>Have something in mind?</h3>
+            <p>From custom applications to streamlined workflows, explore how we could turn an idea into something useful.</p>
+            <span class="pathway-link">Explore services <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="pathway" href="https://ryans-blog-roan.vercel.app/">
+            <span class="pathway-number">02 / JOURNAL</span>
+            <h3>Curious how things get built?</h3>
+            <p>Read about engineering challenges, experiments, and the lessons behind the finished projects.</p>
+            <span class="pathway-link">Read the journal <span aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+      </section>
+      <section class="closing" aria-labelledby="closing-heading">
+        <div class="eyebrow"><span class="eyebrow-line"></span> LET'S CONNECT</div>
+        <h2 id="closing-heading">Let's build something <span>worth using.</span></h2>
+        <p class="extro">Whether you have a project in mind, a question about my work, or simply want to connect, I'd be glad to hear from you.</p>
+        <a class="action-link action-link-primary" href="mailto:ryanlarge@ryanlarge.dev">Get in touch <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div><a class="site-brand" href="#top">RYAN LARGE<span>.</span></a><p>Software development, thoughtful experiments, and the stories behind building things.</p></div>
+      <div class="footer-links"><a href="#work">Work</a><a href="./services/index.html">Services</a><a href="https://ryans-blog-roan.vercel.app/">Journal</a><a href="https://github.com/RyanLarge13" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+      <div class="footer-bottom"><span>© 2026 RYAN LARGE</span><span>DESIGNED & BUILT WITH INTENTION</span></div>
     </footer>
   </body>
 </html>
