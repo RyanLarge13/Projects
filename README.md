@@ -33,7 +33,7 @@ Projects/
 │   └── …
 └── README.md            ← This file
 
-````
+```
 
 > ✅ For each sub-folder please include its own `README.md` (with image placeholders) so the folder is self-documented.
 
